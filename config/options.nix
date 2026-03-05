@@ -62,6 +62,8 @@
 
   # fillchars and diagnostic configuration
   extraConfigLua = ''
+    vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
+
     vim.opt.fillchars:append({
       foldopen = "\u{f07c}",   -- 
       foldclose = "\u{f0f3}",  -- 

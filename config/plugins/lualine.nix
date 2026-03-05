@@ -15,7 +15,7 @@
         refresh = { statusline = 1000; tabline = 1000; };
         disabled_filetypes = { statusline = [ "dashboard" ]; tabline = [ "dashboard" ]; };
       };
-      extensions = [ "lazy" ];
+      extensions = [ "overseer" ];
       sections = {
         lualine_a = [
           { __unkeyed-1 = "mode"; separator = { left = ""; right = ""; }; }

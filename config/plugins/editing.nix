@@ -20,6 +20,7 @@
     modules = {
       pairs = {
         modes = { insert = true; command = false; terminal = false; };
+        markdown = false;
         mappings = { };
       };
       surround = {
@@ -66,6 +67,7 @@
   };
 
   extraConfigLua = ''
+    vim.g.loaded_netrwPlugin = 1
     require("numb").setup()
     require("scissors").setup({
       snippetDir = vim.fn.stdpath("config") .. "/snippets",
@@ -92,8 +94,7 @@
     { mode = "v"; key = "<leader>Sa"; action.__raw = ''function() require("scissors").addNewSnippet() end''; options.desc = "✀  Add Snippet"; }
     { mode = "n"; key = "<leader>Se"; action.__raw = ''function() require("scissors").editSnippet() end''; options.desc = "✀  Edit Snippet"; }
     # Yazi
-    { mode = "n"; key = "<leader>fy"; action = "<cmd>Yazi<cr>"; options.desc = "Open yazi at the current file"; }
-    { mode = "n"; key = "<leader>fY"; action = "<cmd>Yazi cwd<cr>"; options.desc = "Open the file manager in nvim's working directory"; }
-    { mode = "n"; key = "<c-up>"; action = "<cmd>Yazi toggle<cr>"; options.desc = "Resume the last yazi session"; }
+    { mode = [ "n" "v" ]; key = "<leader>e"; action = "<cmd>Yazi<cr>"; options.desc = "Yazi (current location)"; }
+    { mode = "n"; key = "<leader>E"; action = "<cmd>Yazi cwd<cr>"; options.desc = "Yazi (cwd)"; }
   ];
 }

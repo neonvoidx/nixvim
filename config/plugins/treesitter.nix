@@ -25,6 +25,7 @@
       };
       endwise.enable = true;
       ensure_installed = [
+        "norg"
         "css"
         "latex"
         "scss"

@@ -70,9 +70,8 @@
         },
         completion = { nvim_cmp = false, blink = true },
         preferred_link_style = "markdown",
-        disable_frontmatter = false,
         templates = { folder = "templates", date_format = "%d %b %Y" },
-        follow_url_func = function(url) vim.ui.open(url) end,
+        open_notes_in = "current",
         picker = { name = "snacks.pick", new = "<C-x>", insert_link = "<C-l>" },
         tag_mappings = { tag_note = "<C-x>", insert_tag = "<C-l>" },
         attachments = {

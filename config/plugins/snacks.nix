@@ -10,6 +10,19 @@
       rename.enabled = true;
       git.enabled = false;
       notifier = { enabled = true; timeout = 3000; };
+      image = {
+        enabled = true;
+        resolve.__raw = ''
+          function(path, src)
+            local ok, obsidian_api = pcall(require, "obsidian.api")
+            if ok then
+              if obsidian_api.path_is_note and obsidian_api.path_is_note(path) then
+                return obsidian_api.resolve_image_path(src)
+              end
+            end
+          end
+        '';
+      };
       quickfile.enabled = true;
       scroll.enabled = true;
       statuscolumn = {
@@ -160,6 +173,7 @@
     { mode = "n"; key = "<leader>gg"; action.__raw = "function() Snacks.lazygit() end"; options.desc = "Lazygit"; }
     { mode = "n"; key = "<leader>un"; action.__raw = "function() Snacks.notifier.hide() end"; options.desc = "Dismiss All Notifications"; }
     { mode = [ "n" "i" "t" ]; key = "<c-/>"; action.__raw = "function() Snacks.terminal() end"; options.desc = "Toggle Terminal"; }
+    { mode = [ "n" "i" "t" ]; key = "<c-_>"; action.__raw = "function() Snacks.terminal() end"; options.desc = "which_key_ignore"; }
     { mode = [ "n" "t" ]; key = "]]"; action.__raw = "function() Snacks.words.jump(vim.v.count1) end"; options.desc = "Next Reference"; }
     { mode = [ "n" "t" ]; key = "[["; action.__raw = "function() Snacks.words.jump(-vim.v.count1) end"; options.desc = "Prev Reference"; }
     {
