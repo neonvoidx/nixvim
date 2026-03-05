@@ -37,7 +37,7 @@
     prettierd
     eslint_d
     markdownlint-cli2
-    nixfmt-rfc-style
+    nixfmt
     # Linters
     pylint
     checkmake
@@ -48,7 +48,7 @@
     lua-language-server
     basedpyright
     yaml-language-server
-    dockerfile-language-server-nodejs
+    dockerfile-language-server
     vtsls
     terraform-ls
     clang-tools

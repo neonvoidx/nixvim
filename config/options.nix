@@ -1,6 +1,8 @@
 { ... }:
 {
   globals = {
+    mapleader = " ";
+    maplocalleader = "\\";
     skip_ts_context_commentstring_module = true;
     markdown_recommended_style = 0;
     qf_is_open = false;
